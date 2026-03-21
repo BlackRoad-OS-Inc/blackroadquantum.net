@@ -1,0 +1,25 @@
+{
+  "name": "blackroadquantum.net",
+  "org": "BlackRoad-OS-Inc",
+  "category": "security",
+  "title": "BlackRoad Quantum Net",
+  "deploy": {
+    "target": "gematria",
+    "path": "/var/www/blackroad/blackroadquantum.net",
+    "ssl": "auto",
+    "cdn": true
+  },
+  "mirrors": {
+    "gitea": "https://git.blackroad.io/BlackRoad-OS-Inc/blackroadquantum.net",
+    "github": "https://github.com/BlackRoad-OS-Inc/blackroadquantum.net"
+  },
+  "ci": {
+    "on_push": ["build", "deploy"],
+    "on_pr": ["lint", "audit"]
+  },
+  "monitoring": {
+    "uptime": true,
+    "analytics": "roadanalytics",
+    "alerts": "nats"
+  }
+}
