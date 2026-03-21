@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BlackRoad Security</title>
+<title>BlackRoad Quantum Net</title>
 <meta name="description" content="BlackRoad OS — Pave Tomorrow.">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;shape-rendering:geometricPrecision}
-html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;-webkit-text-stroke:.2px rgba(255,255,255,.1)}
+html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;-webkit-text-stroke:.2px rgba(255,255,255,.1);scroll-behavior:smooth}
 :root{
   --g:linear-gradient(90deg,#FF6B2B,#FF2255,#CC00AA,#8844FF,#4488FF,#00D4FF);
   --g135:linear-gradient(135deg,#FF6B2B,#FF2255,#CC00AA,#8844FF,#4488FF,#00D4FF);
@@ -16,20 +16,25 @@ html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smo
   --sg:'Space Grotesk',sans-serif;--jb:'JetBrains Mono',monospace;
 }
 body{background:var(--bg);color:var(--white);font-family:var(--sg);overflow-x:hidden}
+
+/* ═══ GRAD BAR ═══ */
 .grad-bar{height:4px;background:var(--g);image-rendering:crisp-edges}
+
+/* ═══ NAV ═══ */
 nav{display:flex;align-items:center;justify-content:space-between;padding:16px 48px;border-bottom:1px solid var(--border)}
-.nav-logo{font-weight:700;font-size:20px;color:var(--white);display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo{font-weight:700;font-size:20px;color:var(--white);display:flex;align-items:center;gap:10px}
+.nav-logo-mark{width:28px;height:4px;border-radius:2px;background:var(--g);image-rendering:crisp-edges}
 .nav-links{display:flex;gap:32px}
 .nav-links a{font-size:14px;font-weight:500;color:var(--white);opacity:.5;text-decoration:none;transition:opacity .2s}
 .nav-links a:hover{opacity:1}
-a.btn-outline,a.btn-solid,a.btn-lg{text-decoration:none;display:inline-flex;align-items:center}
 .btn-outline{padding:8px 20px;border:1px solid var(--border);border-radius:6px;background:transparent;color:var(--white);font-size:13px;font-weight:600;cursor:pointer;font-family:var(--sg);transition:border-color .2s}
 .btn-outline:hover{border-color:#444}
-.btn-solid{padding:8px 20px;border:none;border-radius:6px;background:var(--white);color:var(--black);font-size:13px;font-weight:600;cursor:pointer;font-family:var(--sg)}
+
+/* ═══ HERO ═══ */
 .hero{text-align:center;padding:120px 48px 80px;position:relative}
 .orb{position:absolute;border-radius:50%;filter:blur(120px);opacity:.06;pointer-events:none}
-.orb-1{width:400px;height:400px;background:#FF2255;top:-150px;left:-5%}
-.orb-2{width:350px;height:350px;background:#4488FF;top:-100px;right:-5%}
+.orb-1{width:400px;height:400px;background:#4488FF;top:-150px;left:-5%}
+.orb-2{width:350px;height:350px;background:#CC00AA;top:-100px;right:-5%}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border:1px solid var(--border);border-radius:20px;font-size:12px;font-weight:500;color:var(--white);margin-bottom:32px}
 .hero-badge-dot{width:8px;height:8px;border-radius:50%;background:var(--g135)}
 .hero h1{font-size:64px;font-weight:700;color:var(--white);line-height:1.08;margin-bottom:24px;max-width:780px;margin-left:auto;margin-right:auto;letter-spacing:-.02em}
@@ -39,68 +44,74 @@ a.btn-outline,a.btn-solid,a.btn-lg{text-decoration:none;display:inline-flex;alig
 .btn-lg-solid{background:var(--white);color:var(--black);border:none}
 .btn-lg-outline{background:transparent;color:var(--white);border:1px solid var(--border);transition:border-color .2s}
 .btn-lg-outline:hover{border-color:#444}
+
+/* ═══ SECTIONS ═══ */
 .section{max-max-width:1100px;width:100%;margin:0 auto;padding:80px 48px}
 .section-label{font-family:var(--jb);font-size:10px;color:var(--white);opacity:.25;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
 .section-title{font-size:32px;font-weight:700;color:var(--white);margin-bottom:12px;letter-spacing:-.015em}
 .section-desc{font-size:14px;color:var(--white);opacity:.4;max-width:460px;margin-bottom:48px}
-.threat-list{border-top:1px solid var(--border)}
-.threat-row{display:grid;grid-template-columns:auto 1fr auto auto;gap:16px;padding:18px 0;border-bottom:1px solid var(--border);align-items:center}
-.threat-severity{width:40px;height:4px;border-radius:2px;background:var(--g);image-rendering:crisp-edges}
-.threat-severity.high{opacity:1}
-.threat-severity.med{opacity:.5}
-.threat-severity.low{opacity:.2}
-.threat-info h4{font-size:14px;font-weight:600;color:var(--white);margin-bottom:2px}
-.threat-info p{font-size:11px;color:var(--white);opacity:.3}
-.threat-id{font-family:var(--jb);font-size:10px;color:var(--white);opacity:.15}
-.threat-tag{padding:3px 10px;border:1px solid var(--border);border-radius:4px;font-family:var(--jb);font-size:10px;color:var(--white);opacity:.3}
-.shield-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.shield-card{border:1px solid var(--border);border-radius:10px;padding:28px;position:relative;transition:border-color .2s;display:block;text-decoration:none;color:var(--white)}
-.shield-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--g);border-radius:10px 10px 0 0;image-rendering:crisp-edges}
-.shield-card:hover{border-color:#333}
-.shield-icon{font-size:20px;margin-bottom:16px;opacity:.5}
-.shield-name{font-size:18px;font-weight:700;color:var(--white);margin-bottom:8px}
-.shield-desc{font-size:13px;color:var(--white);opacity:.4;line-height:1.7;margin-bottom:16px}
-.shield-stat{font-family:var(--jb);font-size:10px;color:var(--white);opacity:.2}
-.audit-card{border:1px solid var(--border);border-radius:12px;overflow:hidden;position:relative}
-.audit-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--g);image-rendering:crisp-edges;z-index:1}
-.audit-header{padding:20px 24px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
-.audit-header h3{font-size:16px;font-weight:600;color:var(--white)}
-.audit-header span{font-family:var(--jb);font-size:10px;color:var(--white);opacity:.2}
-.audit-list{padding:0}
-.audit-row{display:grid;grid-template-columns:140px 1fr auto;gap:16px;padding:14px 24px;border-bottom:1px solid var(--border);align-items:center;font-family:var(--jb);font-size:12px}
-.audit-row:last-child{border-bottom:none}
-.audit-time{color:var(--white);opacity:.2}
-.audit-event{color:var(--white);opacity:.5}
-.audit-status{width:6px;height:6px;border-radius:50%;background:var(--g135)}
-.encrypt-table{border-top:1px solid var(--border)}
-.encrypt-row{display:grid;grid-template-columns:200px 1fr auto;gap:24px;border-bottom:1px solid var(--border);padding:16px 0;align-items:center}
-.encrypt-label{font-family:var(--jb);font-size:11px;color:var(--white);opacity:.25;letter-spacing:.04em;text-transform:uppercase}
-.encrypt-value{font-size:14px;color:var(--white);opacity:.6}
-.encrypt-tag{padding:3px 10px;border:1px solid var(--border);border-radius:4px;font-family:var(--jb);font-size:10px;color:var(--white);opacity:.3}
-.metrics-strip{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-.metric-cell{padding:28px 24px;border-right:1px solid var(--border)}
-.metric-cell:last-child{border-right:none}
-.metric-value{font-size:32px;font-weight:700;color:var(--white);margin-bottom:4px;letter-spacing:-.02em}
-.metric-label{font-family:var(--jb);font-size:10px;color:var(--white);opacity:.25;letter-spacing:.06em;text-transform:uppercase}
-.cert-row{display:flex;gap:10px;flex-wrap:wrap}
-.cert-pill{padding:8px 18px;border:1px solid var(--border);border-radius:20px;font-size:12px;font-weight:500;color:var(--white);opacity:.5;display:flex;align-items:center;gap:8px}
-.cert-dot{width:6px;height:6px;border-radius:50%;background:var(--g135)}
+
+/* ═══ RESEARCH PAPERS — lined rows with number ═══ */
+.paper-list{border-top:1px solid var(--border)}
+.paper{display:grid;grid-template-columns:48px 1fr auto;gap:20px;padding:24px 0;border-bottom:1px solid var(--border);align-items:start;transition:opacity .15s}
+.paper:hover{opacity:.8}
+.paper-num{font-family:var(--jb);font-size:28px;font-weight:700;color:var(--white);opacity:.08}
+.paper-title{font-size:16px;font-weight:600;color:var(--white);margin-bottom:4px}
+.paper-abstract{font-size:13px;color:var(--white);opacity:.4;line-height:1.7;max-width:600px}
+.paper-meta{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.paper-tag{padding:3px 8px;border:1px solid var(--border);border-radius:3px;font-family:var(--jb);font-size:10px;color:var(--white);opacity:.35}
+.paper-date{font-family:var(--jb);font-size:11px;color:var(--white);opacity:.2;white-space:nowrap;padding-top:4px}
+
+/* ═══ FOCUS AREAS — outlined cards with gradient line ═══ */
+.focus-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.focus-card{border:1px solid var(--border);border-radius:10px;padding:28px;transition:border-color .2s}
+.focus-card:hover{border-color:#333}
+.focus-line{width:32px;height:3px;border-radius:1px;background:var(--g);margin-bottom:20px;image-rendering:crisp-edges}
+.focus-card h3{font-size:15px;font-weight:600;color:var(--white);margin-bottom:8px}
+.focus-card p{font-size:13px;color:var(--white);opacity:.4;line-height:1.7}
+.focus-card .focus-stat{font-family:var(--jb);font-size:11px;color:var(--white);opacity:.2;margin-top:14px;letter-spacing:.04em}
+
+/* ═══ TIMELINE — vertical line with gradient dots ═══ */
+.timeline{position:relative;padding-left:32px}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:var(--border)}
+.tl-item{position:relative;padding:0 0 48px}
+.tl-item:last-child{padding-bottom:0}
+.tl-dot{position:absolute;left:-37px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--g135)}
+.tl-dot.minor{width:8px;height:8px;left:-35px;top:8px;opacity:.4}
+.tl-date{font-family:var(--jb);font-size:11px;color:var(--white);opacity:.2;margin-bottom:6px}
+.tl-title{font-size:16px;font-weight:600;color:var(--white);margin-bottom:6px}
+.tl-desc{font-size:13px;color:var(--white);opacity:.4;line-height:1.7;max-width:560px}
+
+/* ═══ COLLABORATORS — outlined pill row ═══ */
+.collab-row{display:flex;gap:12px;flex-wrap:wrap}
+.collab{display:flex;align-items:center;gap:8px;padding:8px 16px;border:1px solid var(--border);border-radius:20px;transition:border-color .2s}
+.collab:hover{border-color:#333}
+.collab-dot{width:6px;height:6px;border-radius:50%;background:var(--g135)}
+.collab-name{font-size:13px;font-weight:500;color:var(--white);opacity:.6}
+
+/* ═══ CTA ═══ */
+.cta{text-align:center;padding:80px 48px}
+.cta-box{max-width:700px;margin:0 auto;padding:64px;border:1px solid var(--border);border-radius:16px;position:relative;overflow:hidden}
+.cta-box::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--g)}
+.cta-box h2{font-size:28px;font-weight:700;color:var(--white);margin-bottom:12px;letter-spacing:-.015em}
+.cta-box p{font-size:14px;color:var(--white);opacity:.4;margin-bottom:32px;max-width:400px;margin-left:auto;margin-right:auto}
+
+/* ═══ FOOTER ═══ */
 footer{border-top:1px solid var(--border);padding:48px;display:flex;justify-content:space-between;align-items:center}
-.footer-brand{font-weight:700;font-size:16px;color:var(--white);text-decoration:none}
+.footer-brand{font-weight:700;font-size:16px;color:var(--white)}
 .footer-links{display:flex;gap:24px}
 .footer-links a{font-size:13px;color:var(--white);opacity:.4;text-decoration:none;transition:opacity .2s}
 .footer-links a:hover{opacity:1}
 .footer-copy{font-size:12px;color:var(--white);opacity:.2}
+
 @media(max-width:768px){
   nav{padding:14px 20px;flex-wrap:wrap;gap:12px}.nav-links{display:none}
   .hero{padding:80px 20px 60px}.hero h1{font-size:36px}
   .hero-cta{flex-direction:column;align-items:center}
   .section{padding:48px 20px}
-  .shield-grid{grid-template-columns:1fr}
-  .threat-row{grid-template-columns:auto 1fr auto}.threat-id{display:none}
-  .audit-row{grid-template-columns:100px 1fr auto}
-  .encrypt-row{grid-template-columns:1fr auto}.encrypt-label{display:none}
-  .metrics-strip{grid-template-columns:repeat(2,1fr)}
+  .paper{grid-template-columns:1fr;gap:8px}.paper-num{display:none}
+  .focus-grid{grid-template-columns:1fr}
+  .cta{padding:48px 20px}
   footer{flex-direction:column;gap:16px;text-align:center;padding:32px 20px}
 }
 
@@ -135,25 +146,25 @@ footer{border-top:1px solid var(--border);padding:48px;display:flex;justify-cont
 }
 </style>
 <script src="https://bb.blackroad.io/bb.js" defer></script>
-<meta name="keywords" content="BlackRoad Security, zero-trust, penetration testing, compliance, encryption">
+<meta name="keywords" content="BlackRoad OS, edge AI, sovereign computing, Raspberry Pi, AI agents">
 <meta property="og:type" content="website">
-<meta property="og:title" content="BlackRoad Security — Zero-Trust Fleet Security">
-<meta property="og:description" content="Penetration testing, security audits, encryption, compliance framework, and identity management for distributed AI infrastructure.">
-<meta property="og:url" content="https://security.blackroad.io">
+<meta property="og:title" content="BlackRoad OS — Pave Tomorrow">
+<meta property="og:description" content="Sovereign edge AI operating system. 627 repos, 106 Workers, 30,000 agents, 5 Pi nodes. Built on hardware you own.">
+<meta property="og:url" content="https://blackroad.io">
 <meta property="og:image" content="https://images.blackroad.io/brand/blackroad-og.png">
 <meta property="og:site_name" content="BlackRoad OS">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="BlackRoad Security — Zero-Trust Fleet Security">
-<meta name="twitter:description" content="Penetration testing, security audits, encryption, compliance framework, and identity management for distributed AI infrastructure.">
+<meta name="twitter:title" content="BlackRoad OS — Pave Tomorrow">
+<meta name="twitter:description" content="Sovereign edge AI operating system. 627 repos, 106 Workers, 30,000 agents, 5 Pi nodes. Built on hardware you own.">
 <meta name="twitter:image" content="https://images.blackroad.io/brand/blackroad-og.png">
-<link rel="canonical" href="https://security.blackroad.io">
+<link rel="canonical" href="https://blackroad.io">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "BlackRoad Security — Zero-Trust Fleet Security",
-  "description": "Penetration testing, security audits, encryption, compliance framework, and identity management for distributed AI infrastructure.",
-  "url": "https://security.blackroad.io",
+  "name": "BlackRoad OS — Pave Tomorrow",
+  "description": "Sovereign edge AI operating system. 627 repos, 106 Workers, 30,000 agents, 5 Pi nodes. Built on hardware you own.",
+  "url": "https://blackroad.io",
   "applicationCategory": "DeveloperApplication",
   "operatingSystem": "Linux, macOS",
   "author": {
@@ -172,138 +183,195 @@ footer{border-top:1px solid var(--border);padding:48px;display:flex;justify-cont
   }
 }
 </script>
+<link rel="icon" type="image/png" href="https://images.blackroad.io/brand/favicon.png">
+<link rel="apple-touch-icon" href="https://images.blackroad.io/brand/apple-touch-icon.png">
 </head>
 <body>
 
+<!-- ═══════════════════════════════════════════════ -->
+<!-- COMPONENT: Gradient Bar                         -->
+<!-- ═══════════════════════════════════════════════ -->
 <div class="grad-bar"></div>
 
+<!-- ═══════════════════════════════════════════════ -->
+<!-- COMPONENT: Navigation                           -->
+<!-- Swap: logo text, link labels                    -->
+<!-- ═══════════════════════════════════════════════ -->
 <nav>
-  <a href="https://blackroad-io.pages.dev" class="nav-logo"><img src="blackroad-logo.png" alt="BlackRoad" style="width:32px;height:32px;border-radius:50%"> BlackRoad Security</a>
+  <div class="nav-logo"><img src="blackroad-logo.png" alt="BlackRoad" style="width:32px;height:32px;border-radius:50%"> BlackRoad Labs</div>
   <div class="nav-links">
-    <a href="#tools">Tools</a>
-    <a href="#threats">Threat Feed</a>
-    <a href="#audit">Audit Log</a>
-    <a href="#encryption">Encryption</a>
+    <a href="#papers">Papers</a>
+    <a href="#focus">Focus Areas</a>
+    <a href="#timeline">Timeline</a>
+    <a href="https://blackroad-io.pages.dev">BlackRoad OS Inc</a>
   </div>
-  <div style="display:flex;gap:10px">
-    <a href="#fleet" class="btn-outline">Fleet Status</a>
-    <a href="https://github.com/blackroad-security" target="_blank" class="btn-solid">GitHub</a>
-  </div>
+  <a class="btn-outline" href="https://github.com/blackboxprogramming/quantum-math-lab" target="_blank" style="text-decoration:none">View on GitHub</a>
 </nav>
 
-<section class="hero" id="hero">
+<!-- ═══════════════════════════════════════════════ -->
+<!-- COMPONENT: Hero                                 -->
+<!-- Swap: badge, h1, subtitle, CTA labels           -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="hero">
   <div class="orb orb-1"></div>
   <div class="orb orb-2"></div>
-  <div class="hero-badge"><div class="hero-badge-dot"></div> 6 Security Tools · Zero Trust</div>
-  <h1>Your infrastructure watches itself</h1>
-  <p>Six Python tools that handle passwords, secrets, certificates, incidents, identity, and SIEM — running on your own hardware.</p>
+  <div class="hero-badge"><div class="hero-badge-dot"></div> Foundational Research</div>
+  <h1>Quantum Network</h1>
+  <p>BlackRoad Labs explores quantum computing, simulation theory, gematria computation, and experimental mathematics. 94 sections of foundational theory. 1,012 verified equations.</p>
   <div class="hero-cta">
-    <a href="#tools" class="btn-lg btn-lg-solid">View Tools</a>
-    <a href="https://github.com/blackroad-security" target="_blank" class="btn-lg btn-lg-outline">Source Code</a>
+    <a class="btn-lg btn-lg-solid" href="#papers" style="text-decoration:none">Read Papers</a>
+    <a class="btn-lg btn-lg-outline" href="#focus" style="text-decoration:none">View Experiments</a>
   </div>
 </section>
 
-<div class="section" style="padding-bottom:0">
-  <div class="metrics-strip">
-    <div class="metric-cell"><div class="metric-value">6</div><div class="metric-label">Security Tools</div></div>
-    <div class="metric-cell"><div class="metric-value">5</div><div class="metric-label">Nodes Monitored</div></div>
-    <div class="metric-cell"><div class="metric-value">0</div><div class="metric-label">External Dependencies</div></div>
-    <div class="metric-cell"><div class="metric-value">UFW</div><div class="metric-label">Firewall Active</div></div>
-  </div>
-</div>
-
-<section class="section" id="threats">
-  <div class="section-label">Threat Feed</div>
-  <div class="section-title">Real incidents, real fixes</div>
-  <div class="threat-list">
-    <div class="threat-row"><div class="threat-severity high"></div><div class="threat-info"><h4>Obfuscated cron dropper on <a href="https://blackroad-infra.pages.dev#fleet" style="color:var(--white);text-decoration:underline;text-underline-offset:3px;opacity:.7">Cecilia</a></h4><p>exec from /tmp/op.py — removed, source traced</p></div><div class="threat-id">BR-SEC-001</div><div class="threat-tag">resolved</div></div>
-    <div class="threat-row"><div class="threat-severity high"></div><div class="threat-info"><h4>Leaked GitHub PAT on <a href="https://blackroad-infra.pages.dev#fleet" style="color:var(--white);text-decoration:underline;text-underline-offset:3px;opacity:.7">Lucidia</a></h4><p>gho_Gfu* token in blackroad-git-worker.service — removed from service file</p></div><div class="threat-id">BR-SEC-002</div><div class="threat-tag">mitigated</div></div>
-    <div class="threat-row"><div class="threat-severity med"></div><div class="threat-info"><h4>xmrig crypto miner reference on <a href="https://blackroad-infra.pages.dev#fleet" style="color:var(--white);text-decoration:underline;text-underline-offset:3px;opacity:.7">Lucidia</a></h4><p>xmrig.service unit file was configured — unit gone, process terminated</p></div><div class="threat-id">BR-SEC-003</div><div class="threat-tag">resolved</div></div>
-    <div class="threat-row"><div class="threat-severity med"></div><div class="threat-info"><h4>50+ SSH keys on <a href="https://blackroad-infra.pages.dev#fleet" style="color:var(--white);text-decoration:underline;text-underline-offset:3px;opacity:.7">Alice</a> and <a href="https://blackroad-infra.pages.dev#fleet" style="color:var(--white);text-decoration:underline;text-underline-offset:3px;opacity:.7">Octavia</a></h4><p>pi@Alice=53 keys, pi@Octavia=52 keys — audit pending</p></div><div class="threat-id">BR-SEC-004</div><div class="threat-tag">open</div></div>
-    <div class="threat-row"><div class="threat-severity low"></div><div class="threat-info"><h4>PUSH_SECRET in plaintext crontabs</h4><p>Moved to /opt/blackroad/stats-push.env (chmod 600) on all nodes</p></div><div class="threat-id">BR-SEC-005</div><div class="threat-tag">resolved</div></div>
-    <div class="threat-row"><div class="threat-severity high"></div><div class="threat-info"><h4><a href="https://blackroad-infra.pages.dev#fleet" style="color:var(--white);text-decoration:underline;text-underline-offset:3px;opacity:.7">Cecilia</a> node unreachable</h4><p>SSH timed out — node down or network issue. Hailo-8 + CECE API + TTS + 16 Ollama models offline</p></div><div class="threat-id">BR-SEC-006</div><div class="threat-tag">active</div></div>
-  </div>
-</section>
-
-<section class="section" id="tools">
-  <div class="section-label">Tools</div>
-  <div class="section-title">Six security tools, all Python</div>
-  <div class="section-desc">Every tool runs locally. No SaaS, no cloud APIs, no third-party access to your secrets.</div>
-  <div class="shield-grid">
-    <div class="shield-card"><div class="shield-icon">◈</div><div class="shield-name">Password Manager</div><div class="shield-desc">PBKDF2 key derivation with Fernet symmetric encryption. Vault CRUD operations, master password authentication, encrypted storage at rest.</div><div class="shield-stat">password_manager.py</div></div>
-    <div class="shield-card"><div class="shield-icon">△</div><div class="shield-name">SIEM Engine</div><div class="shield-desc">Real-time log ingestion from all 5 nodes. Correlation engine matches patterns across sources. Custom alert rules with severity classification.</div><div class="shield-stat">siem.py</div></div>
-    <div class="shield-card"><div class="shield-icon">○</div><div class="shield-name">Certificate Manager</div><div class="shield-desc">X.509 certificate lifecycle management. Automated renewal with ACME integration. Tracks expiry dates across all domains and nodes.</div><div class="shield-stat">cert_manager.py</div></div>
-    <div class="shield-card"><div class="shield-icon">□</div><div class="shield-name">Incident Response</div><div class="shield-desc">Incident tracking with severity classification. Runbook automation for common scenarios. Timeline reconstruction from audit logs.</div><div class="shield-stat">incident_response.py</div></div>
-    <div class="shield-card"><div class="shield-icon">◇</div><div class="shield-name">Secret Scanner</div><div class="shield-desc">Regex and entropy-based scanning for leaked secrets across all repos. Catches API keys, tokens, passwords, and private keys before they ship.</div><div class="shield-stat">secret_scanner.py</div></div>
-    <div class="shield-card"><div class="shield-icon">▽</div><div class="shield-name">Identity Provider</div><div class="shield-desc">OAuth2 and OpenID Connect provider. JWT token issuance, role-based access control, user management. Your own auth server.</div><div class="shield-stat">identity_provider.py</div></div>
-  </div>
-</section>
-
-<section class="section" id="audit">
-  <div class="section-label">Audit Log</div>
-  <div class="audit-card">
-    <div class="audit-header"><h3>Fleet Security Events</h3><span>last 24h · 5 nodes</span></div>
-    <div class="audit-list">
-      <div class="audit-row"><div class="audit-time">2026-03-09 03:00</div><div class="audit-event"><a href="https://blackroad-infra.pages.dev#fleet" style="color:var(--white);opacity:.5;text-decoration:underline;text-underline-offset:3px">Cecilia</a> obfuscated cron removed — dropper /tmp/op.py deleted</div><div class="audit-status"></div></div>
-      <div class="audit-row"><div class="audit-time">2026-03-09 02:45</div><div class="audit-event">PUSH_SECRET migrated to stats-push.env on <a href="https://blackroad-infra.pages.dev#fleet" style="color:var(--white);opacity:.5;text-decoration:underline;text-underline-offset:3px">Cecilia, Octavia, Lucidia</a></div><div class="audit-status"></div></div>
-      <div class="audit-row"><div class="audit-time">2026-03-09 02:30</div><div class="audit-event"><a href="https://blackroad-infra.pages.dev#fleet" style="color:var(--white);opacity:.5;text-decoration:underline;text-underline-offset:3px">Cecilia</a> github-relay.sh credentials moved to ~/.github-relay.env</div><div class="audit-status"></div></div>
-      <div class="audit-row"><div class="audit-time">2026-03-09 02:15</div><div class="audit-event"><a href="https://blackroad-infra.pages.dev#fleet" style="color:var(--white);opacity:.5;text-decoration:underline;text-underline-offset:3px">Lucidia</a> 16 skeleton microservices disabled — ~800MB RAM freed</div><div class="audit-status"></div></div>
-      <div class="audit-row"><div class="audit-time">2026-03-09 01:00</div><div class="audit-event"><a href="https://blackroad-infra.pages.dev#fleet" style="color:var(--white);opacity:.5;text-decoration:underline;text-underline-offset:3px">Cecilia</a> rpi-connect-wayvnc crash loop fixed — system + user service masked</div><div class="audit-status"></div></div>
+<!-- ═══════════════════════════════════════════════ -->
+<!-- COMPONENT: Research Papers List                 -->
+<!-- Lined rows with large faded number.             -->
+<!-- Outlined tags. No fills.                        -->
+<!-- Swap: titles, abstracts, tags, dates            -->
+<!-- Add/remove rows as needed.                      -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-label" id="papers">Publications</div>
+  <div class="section-title">Research papers</div>
+  <div class="section-desc">Original research in computational theory, quantum simulation, and mathematical foundations.</div>
+  <div class="paper-list">
+    <div class="paper">
+      <div class="paper-num">01</div>
+      <div>
+        <div class="paper-title">The Trivial Zero: A Computational Proof That Reality Is Self-Referential</div>
+        <div class="paper-abstract">SHA-256 hash chains as evidence of computational reality. Connects Gödel incompleteness, Riemann zeta functions, DNA encoding, and operating system ontology across 94 sections with 1,012 verified equations.</div>
+        <div class="paper-meta"><span class="paper-tag">Simulation Theory</span><span class="paper-tag">Gödel</span><span class="paper-tag">Riemann</span><span class="paper-tag">94 Sections</span></div>
+      </div>
+      <div class="paper-date">Feb 2026</div>
+    </div>
+    <div class="paper">
+      <div class="paper-num">02</div>
+      <div>
+        <div class="paper-title">Quantum Framework: State-Vector Circuit Simulation</div>
+        <div class="paper-abstract">Dense complex NumPy state-vector simulator implementing Hadamard, Pauli-X/Y/Z, CNOT gates with projective measurement and state collapse. Includes VQE, QAOA, Grover's, and QFT algorithm implementations.</div>
+        <div class="paper-meta"><span class="paper-tag">Quantum Computing</span><span class="paper-tag">VQE</span><span class="paper-tag">Grover's</span></div>
+      </div>
+      <div class="paper-date">Jan 2026</div>
+    </div>
+    <div class="paper">
+      <div class="paper-num">03</div>
+      <div>
+        <div class="paper-title">Unsolved Problem Compendium</div>
+        <div class="paper-abstract">Computational approaches to 10 landmark unsolved problems: Riemann Hypothesis, P vs NP, Navier-Stokes existence and smoothness, Birch and Swinnerton-Dyer conjecture, and six others. Each with numerical experiments.</div>
+        <div class="paper-meta"><span class="paper-tag">P vs NP</span><span class="paper-tag">Navier-Stokes</span><span class="paper-tag">Number Theory</span></div>
+      </div>
+      <div class="paper-date">Dec 2025</div>
+    </div>
+    <div class="paper">
+      <div class="paper-num">04</div>
+      <div>
+        <div class="paper-title">Gematria Computation Engine</div>
+        <div class="paper-abstract">Numerical encoding system mapping alphabetic characters to mathematical values. 156,675 FTS5 index entries across <a href="https://blackroad-assets.pages.dev#memory" style="color:var(--white);opacity:.5;text-decoration:underline;text-underline-offset:3px">228 SQLite databases</a> powering pattern recognition and cross-reference analysis.</div>
+        <div class="paper-meta"><span class="paper-tag">Gematria</span><span class="paper-tag">FTS5</span><span class="paper-tag">Pattern Analysis</span></div>
+      </div>
+      <div class="paper-date">2025</div>
     </div>
   </div>
 </section>
 
-<section class="section" id="encryption">
-  <div class="section-label">Encryption</div>
-  <div class="section-title">What protects the fleet</div>
-  <div class="encrypt-table">
-    <div class="encrypt-row"><div class="encrypt-label">Vault Encryption</div><div class="encrypt-value">Fernet (AES-128-CBC + HMAC-SHA256)</div><div class="encrypt-tag">password_manager.py</div></div>
-    <div class="encrypt-row"><div class="encrypt-label">Key Derivation</div><div class="encrypt-value">PBKDF2 with 100,000 iterations</div><div class="encrypt-tag">NIST SP 800-132</div></div>
-    <div class="encrypt-row"><div class="encrypt-label">Network Mesh</div><div class="encrypt-value"><a href="https://blackroad-infra.pages.dev#fleet" style="color:var(--white);opacity:.6;text-decoration:underline;text-underline-offset:3px">WireGuard</a> (ChaCha20-Poly1305)</div><div class="encrypt-tag">10.8.0.x subnet</div></div>
-    <div class="encrypt-row"><div class="encrypt-label">SSH Keys</div><div class="encrypt-value">Ed25519 across all <a href="https://blackroad-infra.pages.dev#fleet" style="color:var(--white);opacity:.6;text-decoration:underline;text-underline-offset:3px">5 nodes</a></div><div class="encrypt-tag">openssh</div></div>
-    <div class="encrypt-row"><div class="encrypt-label">TLS Termination</div><div class="encrypt-value"><a href="https://blackroad-systems.pages.dev" style="color:var(--white);opacity:.6;text-decoration:underline;text-underline-offset:3px">Cloudflare Edge</a> (18 tunnels, 48+ domains)</div><div class="encrypt-tag">cloudflared</div></div>
+<!-- ═══════════════════════════════════════════════ -->
+<!-- COMPONENT: Focus Areas Grid (3-col)             -->
+<!-- Outlined cards. Gradient accent line.           -->
+<!-- Swap: titles, descriptions, stat lines          -->
+<!-- Use 3 or 6 cards.                               -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-label" id="focus">Disciplines</div>
+  <div class="section-title">Focus areas</div>
+  <div class="section-desc">Six research domains spanning pure mathematics, quantum computing, and computational philosophy.</div>
+  <div class="focus-grid">
+    <div class="focus-card"><div class="focus-line"></div><h3>Quantum Simulation</h3><p>State-vector circuit simulator with Bell states, entanglement, and projective measurement. Real quantum algorithm implementations.</p><div class="focus-stat">VQE · QAOA · Grover's · QFT</div></div>
+    <div class="focus-card"><div class="focus-line"></div><h3>Simulation Theory</h3><p>Computational evidence for self-referential reality. Hash chains, Gödel encoding, and operating system ontology as proof framework.</p><div class="focus-stat">94 sections · 1,012 equations</div></div>
+    <div class="focus-card"><div class="focus-line"></div><h3>Gematria Computation</h3><p>Algorithmic number-letter mapping with FTS5 full-text search across 228 databases. Pattern recognition at scale.</p><div class="focus-stat">156,675 indexed entries</div></div>
+    <div class="focus-card"><div class="focus-line"></div><h3>Number Theory</h3><p>Riemann zeta function analysis, prime distribution, and computational approaches to the Riemann Hypothesis.</p><div class="focus-stat">Riemann · Primes · Zeta zeros</div></div>
+    <div class="focus-card"><div class="focus-line"></div><h3>Emergence Research</h3><p>Experimental trinary logic and emergence simulations. Investigating how complex behavior arises from simple computational rules.</p><div class="focus-stat">Trinary · Cellular automata</div></div>
+    <div class="focus-card"><div class="focus-line"></div><h3>Computational Philosophy</h3><p>Formal proofs connecting Gödel incompleteness, Lorenz attractors, Mandelbrot sets, and DNA encoding to computational substrates.</p><div class="focus-stat">Gödel · Lorenz · Mandelbrot</div></div>
   </div>
 </section>
 
-<section class="section" id="fleet">
-  <div class="section-label">Fleet Security</div>
-  <div class="section-title">Node security posture</div>
-  <div class="cert-row">
-    <a href="https://blackroad-infra.pages.dev#fleet" style="text-decoration:none"><div class="cert-pill"><div class="cert-dot"></div> Lucidia — UFW active (INPUT DROP)</div></a>
-    <a href="https://blackroad-infra.pages.dev#fleet" style="text-decoration:none"><div class="cert-pill"><div class="cert-dot"></div> All nodes — WireGuard encrypted mesh</div></a>
-    <a href="https://blackroad-infra.pages.dev#fleet" style="text-decoration:none"><div class="cert-pill"><div class="cert-dot"></div> Cecilia — NOPASSWD sudo (blackroad)</div></a>
-    <a href="https://blackroad-infra.pages.dev#fleet" style="text-decoration:none"><div class="cert-pill"><div class="cert-dot"></div> Alice — NOPASSWD sudo (alice, pi)</div></a>
-    <a href="https://blackroad-infra.pages.dev#fleet" style="text-decoration:none"><div class="cert-pill"><div class="cert-dot"></div> Octavia — NOPASSWD sudo (pi only)</div></a>
-    <a href="https://blackroad-systems.pages.dev" style="text-decoration:none"><div class="cert-pill"><div class="cert-dot"></div> 18 Cloudflare tunnels — TLS everywhere</div></a>
+<!-- ═══════════════════════════════════════════════ -->
+<!-- COMPONENT: Research Timeline                    -->
+<!-- Vertical line (border). Gradient dots.           -->
+<!-- Major = full dot, minor = faded dot.            -->
+<!-- Swap: dates, titles, descriptions               -->
+<!-- Add/remove items as needed.                     -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-label" id="timeline">History</div>
+  <div class="section-title">Research timeline</div>
+  <div class="section-desc">Major milestones from the founding of the research program to present.</div>
+  <div class="timeline">
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">February 2026</div><div class="tl-title">The Trivial Zero published</div><div class="tl-desc">94-section paper connecting SHA-256 hash chains, Gödel incompleteness, Riemann zeta, and DNA encoding into a unified computational proof of self-referential reality.</div></div>
+    <div class="tl-item"><div class="tl-dot minor"></div><div class="tl-date">January 2026</div><div class="tl-title">Quantum Framework v1.0</div><div class="tl-desc">State-vector simulator with VQE, QAOA, Grover's, and QFT implementations. Full pytest suite. Open-sourced on GitHub.</div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">December 2025</div><div class="tl-title">Unsolved problem compendium</div><div class="tl-desc">Computational approaches to 10 landmark unsolved problems including P vs NP, Riemann Hypothesis, and Navier-Stokes. Numerical experiments for each.</div></div>
+    <div class="tl-item"><div class="tl-dot minor"></div><div class="tl-date">2025</div><div class="tl-title">Gematria engine reaches 156K entries</div><div class="tl-desc">FTS5 full-text search index across 228 SQLite databases. Pattern recognition and cross-reference analysis at scale.</div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">2024</div><div class="tl-title">BlackRoad Labs founded</div><div class="tl-desc">Research division established within BlackRoad OS Inc. Initial focus: computational philosophy, gematria systems, and mathematical foundations.</div></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- COMPONENT: Collaborators Row                    -->
+<!-- Outlined pills with gradient dots.              -->
+<!-- Swap: names. Add/remove as needed.              -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-label">Tools</div>
+  <div class="section-title">Research stack</div>
+  <div class="section-desc">Open-source tools and frameworks powering our research.</div>
+  <div class="collab-row">
+    <div class="collab"><div class="collab-dot"></div><span class="collab-name">Python</span></div>
+    <div class="collab"><div class="collab-dot"></div><span class="collab-name">NumPy</span></div>
+    <div class="collab"><div class="collab-dot"></div><span class="collab-name">SQLite / FTS5</span></div>
+    <a href="https://blackroadai-com.pages.dev#models" class="collab" style="text-decoration:none"><div class="collab-dot"></div><span class="collab-name">Ollama</span></a>
+    <a href="https://blackroad-infra.pages.dev#accelerators" class="collab" style="text-decoration:none"><div class="collab-dot"></div><span class="collab-name">Hailo-8</span></a>
+    <div class="collab"><div class="collab-dot"></div><span class="collab-name">pytest</span></div>
+    <a href="https://blackroad-infra.pages.dev#fleet" class="collab" style="text-decoration:none"><div class="collab-dot"></div><span class="collab-name">Raspberry Pi 5</span></a>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- COMPONENT: CTA Box                              -->
+<!-- Outlined with gradient top bar.                 -->
+<!-- Swap: headline, description, button label       -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="cta">
+  <div class="cta-box">
+    <h2>Explore the source</h2>
+    <p>All research code is open-source. Clone the repos, run the simulations, verify the proofs.</p>
+    <a class="btn-lg btn-lg-solid" href="https://github.com/blackboxprogramming/quantum-math-lab" target="_blank" style="text-decoration:none">View on GitHub</a>
   </div>
 </section>
 
 <section class="section" style="padding-bottom:0">
-  <div class="section-label">Related Divisions</div>
+  <div class="section-label">Related</div>
   <div class="section-title">Go deeper</div>
   <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px">
-    <a href="https://blackroad-infra.pages.dev#fleet" class="cert-pill" style="text-decoration:none"><div class="cert-dot"></div> Hardware Fleet</a>
-    <a href="https://blackroad-systems.pages.dev" class="cert-pill" style="text-decoration:none"><div class="cert-dot"></div> Cloudflare Infrastructure</a>
-    <a href="https://blackroadai-com.pages.dev" class="cert-pill" style="text-decoration:none"><div class="cert-dot"></div> AI Agents</a>
-    <a href="https://blackroad-assets.pages.dev" class="cert-pill" style="text-decoration:none"><div class="cert-dot"></div> Archive &amp; Backup</a>
-    <a href="https://operations-blackroad-io.pages.dev#identity" class="cert-pill" style="text-decoration:none"><div class="cert-dot"></div> Digital Identity</a>
-    <a href="https://blackroad-operator.pages.dev" class="cert-pill" style="text-decoration:none"><div class="cert-dot"></div> Enterprise Automation</a>
-    <a href="https://blackroad-os-home.pages.dev" class="cert-pill" style="text-decoration:none"><div class="cert-dot"></div> CLI Tools</a>
-    <a href="https://finance-blackroad-io.pages.dev#economics" class="cert-pill" style="text-decoration:none"><div class="cert-dot"></div> Cost Breakdown</a>
+    <a href="https://blackroadai-com.pages.dev" style="text-decoration:none;padding:8px 18px;border:1px solid var(--border);border-radius:20px;font-size:12px;font-weight:500;color:var(--white);opacity:.5;display:inline-flex;align-items:center;gap:8px"><div style="width:6px;height:6px;border-radius:50%;background:var(--g135)"></div> 6 AI Agents</a>
+    <a href="https://blackroad-infra.pages.dev#accelerators" style="text-decoration:none;padding:8px 18px;border:1px solid var(--border);border-radius:20px;font-size:12px;font-weight:500;color:var(--white);opacity:.5;display:inline-flex;align-items:center;gap:8px"><div style="width:6px;height:6px;border-radius:50%;background:var(--g135)"></div> 52 TOPS Hailo-8</a>
+    <a href="https://blackroad-assets.pages.dev#memory" style="text-decoration:none;padding:8px 18px;border:1px solid var(--border);border-radius:20px;font-size:12px;font-weight:500;color:var(--white);opacity:.5;display:inline-flex;align-items:center;gap:8px"><div style="width:6px;height:6px;border-radius:50%;background:var(--g135)"></div> 228 SQLite Databases</a>
+    <a href="https://blackroad-metaverse.pages.dev" style="text-decoration:none;padding:8px 18px;border:1px solid var(--border);border-radius:20px;font-size:12px;font-weight:500;color:var(--white);opacity:.5;display:inline-flex;align-items:center;gap:8px"><div style="width:6px;height:6px;border-radius:50%;background:var(--g135)"></div> Simulation Engine</a>
+    <a href="https://education-blackroad-io.pages.dev" style="text-decoration:none;padding:8px 18px;border:1px solid var(--border);border-radius:20px;font-size:12px;font-weight:500;color:var(--white);opacity:.5;display:inline-flex;align-items:center;gap:8px"><div style="width:6px;height:6px;border-radius:50%;background:var(--g135)"></div> Education Platform</a>
+    <a href="https://blackroad-infra.pages.dev#fleet" style="text-decoration:none;padding:8px 18px;border:1px solid var(--border);border-radius:20px;font-size:12px;font-weight:500;color:var(--white);opacity:.5;display:inline-flex;align-items:center;gap:8px"><div style="width:6px;height:6px;border-radius:50%;background:var(--g135)"></div> Compute Fleet</a>
   </div>
 </section>
 
 <footer>
-  <a href="https://blackroad-io.pages.dev" class="footer-brand">BlackRoad Security</a>
+  <div class="footer-brand"><a href="https://blackroad-io.pages.dev" style="color:inherit;text-decoration:none">BlackRoad Labs</a></div>
   <div class="footer-links">
-    <a href="https://github.com/blackroad-security" target="_blank">GitHub</a>
-    <a href="https://blackroad-io.pages.dev">OS Inc</a>
-    <a href="https://blackroad-infra.pages.dev">Hardware</a>
-    <a href="https://blackroad-systems.pages.dev">Cloud</a>
+    <a href="#papers">Papers</a>
     <a href="https://blackroadai-com.pages.dev">AI</a>
-    <a href="https://blackroad-os-home.pages.dev">BlackRoad OS</a>
+    <a href="https://blackroad-assets.pages.dev">Archive</a>
+    <a href="https://blackroad-metaverse.pages.dev">Interactive</a>
+    <a href="https://github.com/blackboxprogramming/simulation-theory" target="_blank">GitHub</a>
+    <a href="https://blackroad-io.pages.dev">OS Inc</a>
   </div>
-  <div class="footer-copy">&copy; 2026 BlackRoad Security. All rights reserved.</div>
+  <div class="footer-copy">&copy; 2026 BlackRoad Labs. All rights reserved.</div>
 </footer>
 <div class="grad-bar"></div>
 
